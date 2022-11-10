@@ -1,0 +1,55 @@
+<div class="col-md-12">
+    <h1 class="display-5">Display 5</h1>
+
+    <form class="row g-3" [formGroup]="profileForm" (ngSubmit)="add()">
+        <div class="col-md-2">
+            <label for="jorn" class="form-label">#</label>
+            <select id="inputState" class="form-select" name="jorn" formControlName="jorn">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+              </select>
+        </div>
+        <div class="col-md-10">
+            <label for="team" class="form-label">Team</label>
+            <input type="text" class="form-control" name="team" formControlName="team">
+        </div>
+
+        <div class="col-md-4">
+            <label for="inputCity" class="form-label">Día</label>
+            <input type="text" class="form-control" name="day" formControlName="day">
+        </div>
+        <div class="col-md-4">
+            <label for="cancha" class="form-label">Cancha</label>
+            <select id="inputState" class="form-select" name="location" formControlName="location">
+            <option selected>Cutzeo</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputZip" class="form-label">Time</label>
+            <input type="time" class="form-control" id="inputZip" name="timer" formControlName="timer">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" checked name="loca" formControlName="local">
+                <label class="form-check-label" for="gridCheck">
+              Local
+            </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+    </form>
+</div>
