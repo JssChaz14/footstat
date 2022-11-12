@@ -1,1 +1,41 @@
-<p>ingresos-agregar works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/ingresos']" routerLinkActive="router-link-active">Lista de ingresos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Agregar Ingreso</li>
+    </ol>
+</nav>
+
+<div class="col-md-12">
+    <h1 class="display-4">Agregar Ingreso</h1>
+
+    <form class="row g-3" [formGroup]="ingresosForm" (ngSubmit)="agregarIngreso()">
+
+        <div class="col-md-3">
+            <label for="cancha" class="form-label">Jornada</label>
+            <select id="inputState" class="form-select" name="location" formControlName="uidJornada">
+                <option *ngFor="let jor of jornadas" 
+                    [value]="jor.jorn" 
+                    >
+                    {{jor.jorn}}
+                </option>
+          </select>
+        </div>
+        <div class="col-md-6">
+            <label for="cancha" class="form-label">Patrocinador</label>
+            <select id="inputState" class="form-select" name="frecuencia" formControlName="uidPatrocinador">
+                <option *ngFor="let pat of patrocinadores" 
+                [value]="pat.nombre">
+                {{pat.nombre}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputZip" class="form-label">Cantidad:</label>
+            <input type="text" class="form-control" id="cantidad" name="cantidad" formControlName="cantidad">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+    </form>
+</div>

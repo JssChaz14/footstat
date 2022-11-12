@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dragones-cutzeo": {
+      "hosting": {
+        "footstat": [
+          "dragones-cutzeo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dragones-cutzeo"
+  }
+}

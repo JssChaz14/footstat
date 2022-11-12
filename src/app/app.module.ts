@@ -20,6 +20,15 @@ import { EgresosAgregarComponent } from './components/egresos/egresos-agregar/eg
 import { JugadorDetalleComponent } from './components/equipo/jugador-detalle/jugador-detalle.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { JornadaDetalleComponent } from './components/jornada/jornada-detalle/jornada-detalle.component';
+import { PtPatrocinadoresComponent } from './components/patrocinador/pt-patrocinadores/pt-patrocinadores.component';
+import { PtPatrocinadorDetalleComponent } from './components/patrocinador/pt-patrocinador-detalle/pt-patrocinador-detalle.component';
+
 
 @NgModule({
   declarations: [
@@ -39,12 +48,16 @@ import { HomeComponent } from './components/home/home.component';
     EgresosComponent,
     EgresosAgregarComponent,
     JugadorDetalleComponent,
-    HomeComponent
+    HomeComponent,
+    JornadaDetalleComponent,
+    PtPatrocinadoresComponent,
+    PtPatrocinadorDetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

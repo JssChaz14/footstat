@@ -1,1 +1,45 @@
-<p>pt-agregar works!</p>
+<div class="col-md-12">
+    <h1 class="display-4">Agregar Patrocinador</h1>
+
+    <form class="row g-3" [formGroup]="patrocinadorForm" (ngSubmit)="add()">
+
+        <div class="col-md-4">
+            <label for="team" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" formControlName="nombre">
+        </div>
+
+        <div class="col-md-3">
+            <label for="cancha" class="form-label">Tipó</label>
+            <select id="inputState" class="form-select" name="location" formControlName="tipo">
+            <option>Persona</option>
+            <option>Negocio</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+            <label for="cancha" class="form-label">Aportes</label>
+            <select id="inputState" class="form-select" name="frecuencia" formControlName="frecuencia">
+            <option>Semanal</option>
+            <option>Quincenal</option>
+            <option>Mensual</option>
+            <option>Único</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Cantidad:</label>
+            <input type="text" class="form-control" id="cantidad" name="cantidad" formControlName="cantidad">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" checked name="loca" formControlName="activo">
+                <label class="form-check-label" for="gridCheck">
+              Activo
+            </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+    </form>
+</div>

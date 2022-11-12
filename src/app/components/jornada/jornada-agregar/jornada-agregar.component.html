@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-5">Agregar Jornada</h1>
 
     <form class="row g-3" [formGroup]="profileForm" (ngSubmit)="add()">
         <div class="col-md-2">
@@ -27,13 +27,25 @@
 
         <div class="col-md-4">
             <label for="inputCity" class="form-label">Día</label>
-            <input type="text" class="form-control" name="day" formControlName="day">
+            <input type="date" class="form-control" name="team" formControlName="day">
         </div>
         <div class="col-md-4">
             <label for="cancha" class="form-label">Cancha</label>
             <select id="inputState" class="form-select" name="location" formControlName="location">
-            <option selected>Cutzeo</option>
-            <option>...</option>
+            <option selected>U. Cutzeo</option>
+            <option>U. Cutzeo 2</option>
+
+            <option>U. Deportiva</option>
+            <option>U. Deportiva 2</option>
+            <option>U. Antonio Conejo</option>
+            <option>B. Alto</option>
+            <option>B. Dolores</option>
+            <option>Rayon</option>
+
+            <option>Zirandaro</option>
+            <option>Purechucho</option>
+            <option>Zirandaro</option>
+            <option>Tiquicheo</option>
           </select>
         </div>
         <div class="col-md-4">

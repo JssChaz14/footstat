@@ -1,0 +1,29 @@
+<div class="display-5">
+    Lista de listaPatrocinadores
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+
+                <th scope="col">Cantidad</th>
+                <th scope="col">Frecuencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listaPatrocinadores">
+                <th scope="row">{{item.nombre}}</th>
+                <td>{{item.tipo}}</td>
+                <td>{{item.cantidad}}</td>
+                <td>{{item.frecuencia}}</td>
+                <td>
+                    <i *ngIf="item.activo" class="text-primary fas fa-check"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

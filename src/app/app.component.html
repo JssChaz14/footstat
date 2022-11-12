@@ -1,51 +1,92 @@
-<div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-    <header>
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark  bg-dark" aria-label="Eighth navbar example">
-            <div class="container">
-                <a class="navbar-brand" href="#">Container</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">Dragones de Cutzeo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown07">
-                                <li><a class="dropdown-item" [routerLink]="['/jornada/agregar']" routerLinkActive="router-link-active">Agregar</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Nomina</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Jugadores
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/jugadores']" routerLinkActive="router-link-active">Jugadores</a></li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown07">
-                                <li><a class="dropdown-item" [routerLink]="['/jugadores']" routerLinkActive="router-link-active">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" [routerLink]="['/jugador/agregar']" routerLinkActive="router-link-active">Agregar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Jornadas
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/jornadas']" routerLinkActive="router-link-active">Jornadas</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" [routerLink]="['/jornada/agregar']" routerLinkActive="router-link-active">Agregar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Patrocinadores
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/patrocinadores']" routerLinkActive="router-link-active">Patrocinadores</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" [routerLink]="['/patrocinador-agregar']" routerLinkActive="router-link-active">Agregar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-success" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ingresos
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/ingresos']" routerLinkActive="router-link-active">Lista de ingresos</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" [routerLink]="['/ingresos-agregar']" routerLinkActive="router-link-active">Agregar</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
             </div>
-        </nav>
-    </header>
-
-    <!-- Begin page content -->
-    <div class="container">
-        <div class="row m-3">
-            <router-outlet></router-outlet>
 
         </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0 mt-5 mb-3">
+    <div class="container mt-3">
+        <router-outlet></router-outlet>
     </div>
+</main>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-    </footer>
+<footer class="footer mt-auto py-3 bg-light text-center">
+    <div class="container">
+        <span>Dragones de Cutze FC - <small class="text-muted">Power by <strong>Teckay.com</strong></small></span>
+    </div>
+</footer>

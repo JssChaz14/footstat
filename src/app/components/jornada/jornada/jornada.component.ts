@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+
+
 @Component({
   selector: 'app-jornada',
   templateUrl: './jornada.component.html',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JornadaComponent implements OnInit {
 
-  constructor() { }
+  private itemsCollection: AngularFirestoreCollection<any>;
+  items: Observable<any[]>;
+
+  constructor(private afs: AngularFirestore) {
+    this.itemsCollection = afs.collection<any>('jornadas');
+    this.items = this.itemsCollection.valueChanges();
+  }
 
   ngOnInit(): void {
   }

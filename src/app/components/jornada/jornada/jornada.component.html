@@ -1,1 +1,28 @@
-<p>jornada works!</p>
+<div class="display-5">
+    Jornadas, torneo libre 2022 - 2023
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Vs.</th>
+                <th scope="col">Cancha</th>
+                <th scope="col">Día hora</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items | async">
+                <th scope="row">{{item.jorn}}</th>
+                <td>{{item.team}}</td>
+                <td>{{item.location}}</td>
+                <td>{{item.day}} - {{item.timer}}</td>
+                <td>
+                    <i *ngIf="item.local" class="text-primary fas fa-home"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
