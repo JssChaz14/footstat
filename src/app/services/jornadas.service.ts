@@ -16,11 +16,16 @@ export class JornadasService {
   }
 
   jornadas() {
-    return this.afs.collection('jornadas').valueChanges();
+    return this.afs.collection('jornadas', ref => ref.orderBy('team', 'asc')).valueChanges();
   }
 
 
   jornadaEditar( uid: any, record: any ) {
     this.afs.doc('jornadas/' + uid).update(record);
+  }
+
+  jornadaDetallesIngresos(uid: any, jorn: any) {
+    console.log(jorn)
+    return this.afs.collection('ingresos', ref => ref.where('uidJornada', '==', jorn.toString())).valueChanges();
   }
 }

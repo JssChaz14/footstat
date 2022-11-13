@@ -28,6 +28,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { JornadaDetalleComponent } from './components/jornada/jornada-detalle/jornada-detalle.component';
 import { PtPatrocinadoresComponent } from './components/patrocinador/pt-patrocinadores/pt-patrocinadores.component';
 import { PtPatrocinadorDetalleComponent } from './components/patrocinador/pt-patrocinador-detalle/pt-patrocinador-detalle.component';
+import { IngresosxjornadasComponent } from './components/ingresos/ingresosxjornadas/ingresosxjornadas.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PtPatrocinadorDetalleComponent } from './components/patrocinador/pt-pat
     HomeComponent,
     JornadaDetalleComponent,
     PtPatrocinadoresComponent,
-    PtPatrocinadorDetalleComponent
+    PtPatrocinadorDetalleComponent,
+    IngresosxjornadasComponent
   ],
   imports: [
     BrowserModule,

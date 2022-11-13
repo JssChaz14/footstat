@@ -15,6 +15,7 @@ import { IngresosComponent } from './components/ingresos/ingresos/ingresos.compo
 import { IngresosAgregarComponent } from './components/ingresos/ingresos-agregar/ingresos-agregar.component';
 import { EgresosComponent } from './components/egresos/egresos/egresos.component';
 import { EgresosAgregarComponent } from './components/egresos/egresos-agregar/egresos-agregar.component';
+import { IngresosxjornadasComponent } from './components/ingresos/ingresosxjornadas/ingresosxjornadas.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,6 +34,8 @@ const routes: Routes = [
   { path: 'patrocinador-agregar', component: PtAgregarComponent },
 
   { path: 'ingresos', component: IngresosComponent },
+  { path: 'ingresos-detallados', component: IngresosxjornadasComponent },
+
   { path: 'ingresos-agregar', component: IngresosAgregarComponent },
 
   { path: 'egresos', component: EgresosComponent },

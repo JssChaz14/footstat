@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { IngresosService } from '../../../services/ingresos.service';
 import { JornadasService } from '../../../services/jornadas.service';
 
@@ -31,7 +32,16 @@ export class IngresosAgregarComponent implements OnInit {
 
   agregarIngreso() {
     this.sServicios.addIngreso(this.ingresosForm.value)
-      .then( () => { console.log('ingresado')})
+      .then( () => { 
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Jornada Agregada',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.ingresosForm.reset();
+      })
       .catch( (err) => { console.log(err)})
     console.log(this.ingresosForm.value)
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { IngresosService } from '../../../services/ingresos.service';
+import { JornadasService } from '../../../services/jornadas.service';
 
 @Component({
   selector: 'app-ingresos',
@@ -24,5 +25,7 @@ export class IngresosComponent implements OnInit {
       this.items = ing;
     });
   }
+
+  
 
 }
