@@ -29,6 +29,7 @@ import { JornadaDetalleComponent } from './components/jornada/jornada-detalle/jo
 import { PtPatrocinadoresComponent } from './components/patrocinador/pt-patrocinadores/pt-patrocinadores.component';
 import { PtPatrocinadorDetalleComponent } from './components/patrocinador/pt-patrocinador-detalle/pt-patrocinador-detalle.component';
 import { IngresosxjornadasComponent } from './components/ingresos/ingresosxjornadas/ingresosxjornadas.component';
+import { EgresosxjornadaComponent } from './components/egresos/egresosxjornada/egresosxjornada.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { IngresosxjornadasComponent } from './components/ingresos/ingresosxjorna
     JornadaDetalleComponent,
     PtPatrocinadoresComponent,
     PtPatrocinadorDetalleComponent,
-    IngresosxjornadasComponent
+    IngresosxjornadasComponent,
+    EgresosxjornadaComponent
   ],
   imports: [
     BrowserModule,

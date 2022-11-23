@@ -16,6 +16,7 @@ import { IngresosAgregarComponent } from './components/ingresos/ingresos-agregar
 import { EgresosComponent } from './components/egresos/egresos/egresos.component';
 import { EgresosAgregarComponent } from './components/egresos/egresos-agregar/egresos-agregar.component';
 import { IngresosxjornadasComponent } from './components/ingresos/ingresosxjornadas/ingresosxjornadas.component';
+import { EgresosxjornadaComponent } from './components/egresos/egresosxjornada/egresosxjornada.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,10 +36,10 @@ const routes: Routes = [
 
   { path: 'ingresos', component: IngresosComponent },
   { path: 'ingresos-detallados', component: IngresosxjornadasComponent },
-
   { path: 'ingresos-agregar', component: IngresosAgregarComponent },
 
   { path: 'egresos', component: EgresosComponent },
+  { path: 'egresos-detallados', component: EgresosxjornadaComponent },
   { path: 'egresos-agregar', component: EgresosAgregarComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

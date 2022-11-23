@@ -19,6 +19,13 @@ export class JornadasService {
     return this.afs.collection('jornadas', ref => ref.orderBy('team', 'asc')).valueChanges();
   }
 
+  orderJornadas() {
+    return this.afs.collection('jornadas', ref => ref.orderBy('jorn', 'desc')).valueChanges();
+  }
+  
+  actualJornadas() {
+    return this.afs.collection('jornadas', ref => ref.orderBy('jorn', 'desc').limit(1)).valueChanges();
+  }
 
   jornadaEditar( uid: any, record: any ) {
     this.afs.doc('jornadas/' + uid).update(record);
@@ -27,5 +34,14 @@ export class JornadasService {
   jornadaDetallesIngresos(uid: any, jorn: any) {
     console.log(jorn)
     return this.afs.collection('ingresos', ref => ref.where('uidJornada', '==', jorn.toString())).valueChanges();
+  }
+
+  jugadores() {
+    return this.afs.collection('jugadores', ref => ref.orderBy('numero', 'asc')).valueChanges();
+  }
+
+  jornadaDetalleEgresos(uid: any, jorn: any) {
+    console.log(jorn)
+    return this.afs.collection('egresos', ref => ref.where('uidJornada', '==', jorn.toString())).valueChanges();
   }
 }

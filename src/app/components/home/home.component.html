@@ -1,32 +1,71 @@
-<div class="row">
+<div class="row" *ngIf="jornada['local'] === true; else visitante">
     <div class="col-md-4">
 
         <div class="card w-100">
             <img src="../../../assets/cutzeo.jpg" class="card-img-top" alt="Team">
             <div class="card-body">
-                <p class="card-text">Cutzeo</p>
+                <h3 class="card-text text-center">Cutzeo</h3>
             </div>
         </div>
 
     </div>
     <div class="col-md-4 text-center">
+        <small>Cancha:</small>
         <div class="display-5">
-            Cancha
+            {{jornada.location}}
         </div>
         <div class="display-2">
             VS
         </div>
-        <div class="display-5">
-            Día - Hora
-        </div>
-
+        <h2>
+            {{jornada.day | date }} - {{ jornada.timer}}
+        </h2>
+        <p>Jornada: {{jornada.jorn}}</p>
     </div>
     <div class="col-md-4">
         <div class="card w-100">
-            <img src="../../../assets/rival.jpg" class="card-img-top" alt="Team">
+            <img src="../../../assets/rival.jpg" class="card-img-top" alt="{{jornada.team}}">
             <div class="card-body">
-                <p class="card-text">Rival</p>
+                <h3 class="card-text text-center">{{jornada.team}}</h3>
             </div>
         </div>
     </div>
 </div>
+
+
+<ng-template #visitante>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card w-100">
+                <img src="../../../assets/rival.jpg" class="card-img-top" alt="{{jornada.team}}">
+                <div class="card-body">
+                    <h3 class="card-text text-center">{{jornada.team}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <small>Cancha:</small>
+            <div class="display-5">
+                {{jornada.location}}
+            </div>
+            <div class="display-2">
+                VS
+            </div>
+            <div class="display-5">
+                {{jornada.day | date }} - {{ jornada.timer}}
+            </div>
+            <p>Jornada: {{jornada.jorn}}</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card w-100">
+                <img src="../../../assets/cutzeo.jpg" class="card-img-top" alt="Team">
+                <div class="card-body">
+                    <h3 class="card-text text-center">Cutzeo</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-template>

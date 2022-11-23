@@ -35,7 +35,7 @@ export class IngresosService {
   }
 
   ingresos() {
-    return this.afs.collection('ingresos').valueChanges()
+    return this.afs.collection('ingresos', ref => ref.orderBy('postDate', 'desc')).valueChanges()
   }
 
   getIngreso( ingreso: any ) {
@@ -45,4 +45,19 @@ export class IngresosService {
   updateIngreso( alumno: any ) {
     return this.afs.collection('ingresos').doc(alumno.uid).update(alumno)
   }
+
+  addEgreso( egreso: any ) {
+    let uid = this.afs.createId();
+    egreso['uid'] = uid;
+    return this.afs.collection('egresos').doc(egreso.uid).set(egreso, { merge: true });
+  }
+
+  egresos() {
+    return this.afs.collection('egresos').valueChanges()
+  }
+
+  getEgreso( ingreso: any ) {
+    return this.afs.collection('egresos', ref => ref.where('uid', '==', ingreso).limit(1)).valueChanges()
+  }
+
 }

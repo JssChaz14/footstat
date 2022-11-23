@@ -1,1 +1,61 @@
-<p>egresos-agregar works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/egresos']" routerLinkActive="router-link-active">Lista de egresos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Agregar Egreso</li>
+    </ol>
+</nav>
+
+<div class="col-md-12">
+    <h1 class="display-4">Agregar Egreso</h1>
+
+    <form class="row g-3" [formGroup]="egresosForm" (ngSubmit)="agregarEgreso()">
+
+        <div class="col-md-2">
+            <label for="cancha" class="form-label">Jornada</label>
+            <select id="inputState" class="form-select" name="location" formControlName="uidJornada">
+                <option *ngFor="let jor of jornadas" 
+                    [value]="jor.jorn" 
+                    >
+                    {{jor.jorn}}
+                </option>
+          </select>
+        </div>
+        <div class="col-md-5">
+            <label for="cancha" class="form-label">Tipo</label>
+            <select id="inputState" class="form-select" name="tipo" formControlName="tipo">
+                <option>Pago Jugador</option>
+                <option>Tarjetas</option>
+                <option>Cancha</option>
+                <option>Aguas</option>
+                <option>Arbitraje</option>
+                <option>Convivo</option>
+                <option>Otros</option>
+                <option>Externo</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+            <label for="cancha" class="form-label">jugador</label>
+            <select id="inputState" class="form-select" name="uidJugador" formControlName="uidJugador">
+                <option *ngFor="let pat of jugadores" 
+                [value]="pat.nombre">
+                {{pat.nombre}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Cantidad:</label>
+            <input type="text" class="form-control" id="cantidad" name="cantidad" formControlName="cantidad">
+        </div>
+
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Comentarios:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="comentarios"></textarea>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+    </form>
+</div>

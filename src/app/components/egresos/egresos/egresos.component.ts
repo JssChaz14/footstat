@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IngresosService } from 'src/app/services/ingresos.service';
 
 @Component({
   selector: 'app-egresos',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EgresosComponent implements OnInit {
 
-  constructor() { }
+  items: any;
 
-  ngOnInit(): void {
+  constructor(private sIngresos: IngresosService) {
   }
 
+  ngOnInit(): void {
+    this.ingresos();
+  }
+
+  ingresos() {
+    this.sIngresos.egresos().subscribe( ( ing ) => {
+      this.items = ing;
+    });
+  }
 }
